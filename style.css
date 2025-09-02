@@ -16,7 +16,7 @@
 #drop-area {
     height: 300px;
     width: 500px;
-    border-radius: 30px;
+    border-radius: 45px;
     background: #ede6e6;
     text-align: center;
     padding: 30px;
@@ -31,15 +31,32 @@
     color: #323c42;
 }
 
-#file-view img {
+#file-view #upload-icon {
+    width: 100px;
+    height: 100px;
+    margin-top: 40px;
+}
+
+#file-view #file-icon {
     width: 100px;
     height: 100px;
     margin-top: 25px;
 }
 
-#file-view span {
-    display: block;
+#file-view button {
     font-size: 12px;
-    color: #6d8791;
+    color: #ede6e6;
     margin-top: 15px;
+    width: 25%;
+    height: 15%;
+    border: 2px;
+    border-radius: 10px;
+    border-color:#ede6e6;
+    background-color: #323c42;
+}
+
+#file-view button:hover {
+    background-color: #ede6e6;
+    color: #323c42;
+    cursor: pointer;
 }
