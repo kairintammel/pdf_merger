@@ -7,6 +7,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>PDF merger</h1>
+    <div class="area">
+        <label for="input-file" id="drop-area">
+            <input type="file" id="input-file" accept="pdf/*" multiple hidden>
+            <div id="file-view">
+                <img src="upload.png" alt="Upload Icon" id="upload-icon">
+                <p>Drag & Drop PDF files here<br>or click to select files</p>
+                <span>Upload PDF files from your computer</span>
+            </div>
+        </label>
+    </div>
 </body>
 </html>
