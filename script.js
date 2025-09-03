@@ -5,6 +5,9 @@ inputFile.addEventListener('change', showStatus);
 
 
 function showStatus() {
+  if(inputFile.files.length === 0){
+    return;
+  }
   let howMany = inputFile.files.length;
   document.getElementById('file-view').innerHTML = `<img src="file.png" alt="File Icon" id="file-icon"><br><p>${howMany} file(s) selected.</p> <br><button onclick="merge()">Merge PDFs</button>`;
 }
@@ -16,6 +19,7 @@ async function merge(){
   if(pdfFiles.length < 2){
     alert("Please select at least two PDF files to merge.");
     document.getElementById('file-view').innerHTML = `<img src="upload.png" alt="Upload Icon" id="upload-icon"><br><p id="status-text">Drag & Drop PDF files here<br>or click to select files</p>`;
+//  file explorer pops up again
     return;
   }
 
@@ -67,4 +71,5 @@ dropArea.addEventListener('dragover', (event) => {
 dropArea.addEventListener('drop', (event) => {
   event.preventDefault();
   inputFile.files = event.dataTransfer.files;
+  showStatus();
 });
