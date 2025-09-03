@@ -9,7 +9,7 @@ function showStatus() {
     return;
   }
   let howMany = inputFile.files.length;
-  document.getElementById('file-view').innerHTML = `<img src="file.png" alt="File Icon" id="file-icon"><br><p>${howMany} file(s) selected.</p> <br><button onclick="merge()">Merge PDFs</button>`;
+  document.getElementById('file-view').innerHTML = `<img src="pics/file.png" alt="File Icon" id="file-icon"><br><p>${howMany} file(s) selected.</p> <br><button onclick="merge()">Merge PDFs</button>`;
 }
 
 async function merge(){
@@ -18,7 +18,7 @@ async function merge(){
 
   if(pdfFiles.length < 2){
     alert("Please select at least two PDF files to merge.");
-    document.getElementById('file-view').innerHTML = `<img src="upload.png" alt="Upload Icon" id="upload-icon"><br><p id="status-text">Drag & Drop PDF files here<br>or click to select files</p>`;
+    document.getElementById('file-view').innerHTML = `<img src="pics/upload.png" alt="Upload Icon" id="upload-icon"><br><p id="status-text">Drag & Drop PDF files here<br>or click to select files</p>`;
 //  file explorer pops up again
     return;
   }
@@ -37,7 +37,7 @@ async function merge(){
       newPDF.addPage(page);
     });
 
-    document.getElementById('file-view').innerHTML = `<img src="upload.png" alt="Upload Icon" id="upload-icon"><br><p id="status-text">Drag & Drop PDF files here<br>or click to select files</p>`;
+    document.getElementById('file-view').innerHTML = `<img src="pics/upload.png" alt="Upload Icon" id="upload-icon"><br><p id="status-text">Drag & Drop PDF files here<br>or click to select files</p>`;
   }
 
   const mergedPdfBytes = await newPDF.save();
